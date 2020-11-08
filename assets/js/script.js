@@ -12,7 +12,7 @@ var cardTitleEl = document.querySelector(".card-title");
 var weatherIconEl = document.querySelector("#icon");
 var uvIndexEl = document.querySelector("#uvIndex");
 
-var openWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/";
+var openWeatherQueryUrl = "https://api.openweathermap.org/data/2.5/";
 var apiKey = "cce801f5223df23bb3369079c0a9d97e";
 var existingEntries = JSON.parse(localStorage.getItem("cities"));
 
@@ -239,7 +239,7 @@ function getForecast(cityName, apiKey) {
         dateTitle[i].textContent = formatDate(ourForecastObject[i].date);
         iconEl[i].setAttribute(
           "src",
-          "http://openweathermap.org/img/wn/" +
+          "https://openweathermap.org/img/wn/" +
             ourForecastObject[i].icon +
             "@2x.png"
         );
@@ -264,7 +264,7 @@ function displayCurrentWeather(resultObj) {
   // setting src and alt attribute of image
   weatherIconEl.setAttribute(
     "src",
-    "http://openweathermap.org/img/wn/" + resultObj.weather[0].icon + "@2x.png"
+    "https://openweathermap.org/img/wn/" + resultObj.weather[0].icon + "@2x.png"
   );
   weatherIconEl.setAttribute("alt", resultObj.weather[0].description);
   cardTitleEl.append(weatherIconEl);
