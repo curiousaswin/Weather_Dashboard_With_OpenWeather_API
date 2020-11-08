@@ -2,7 +2,8 @@
 var searchFormEl = document.querySelector("#citySearchForm");
 var cityInputVal = document.querySelector("#inputCity");
 var searchBtn = document.querySelector("#citySearch");
-var cityListGroupEl = document.querySelector(".list-group");
+var popularCityListGroupEl = document.querySelector(".list-group-1");
+var usersCityListGroupEl = document.querySelector(".list-group-2");
 
 // Elements in WeatherContent Main div
 var weatherContentDiv = document.querySelector("#weatherContent");
@@ -15,16 +16,27 @@ var openWeatherQueryUrl = "http://api.openweathermap.org/data/2.5/";
 var apiKey = "cce801f5223df23bb3369079c0a9d97e";
 var existingEntries = JSON.parse(localStorage.getItem("cities"));
 
+var mostPopularCities = [
+  "New York City",
+  "London",
+  "Singapore",
+  "Los Angeles",
+  "Hong Kong",
+  "Tokyo",
+];
 // The load event is fired when the window has loaded
 window.onload = function initializeDashboard() {
   // retrieving our data from local storage and converting it back into an array
-
   if (localStorage.getItem("cities") !== null) {
     for (var i = 0; i < existingEntries.length; i++) {
-      console.log(existingEntries[i]);
       // create a button element with city name
-      createNewCityButton(existingEntries[i]);
+      createNewCityButton(existingEntries[i], usersCityListGroupEl);
     }
+  }
+  // We will also add reccomendations of the most popular cities to the sidebar as reference
+  for (var i = 0; i < mostPopularCities.length; i++) {
+    // create a button element with city name
+    createNewCityButton(mostPopularCities[i], popularCityListGroupEl);
   }
 };
 
@@ -92,7 +104,7 @@ function getCurrentWeather(cityName, apiKey) {
             cityName +
             " perhaps you mistyped... Please try again",
           weatherContentDiv,
-          10000
+          4000
         );
         return;
       } else {
@@ -110,15 +122,28 @@ function getCurrentWeather(cityName, apiKey) {
 
       // save city name to local storage if it is new
       var isNew = true;
-      for (var i = 0; i < existingEntries.length; i++) {
-        if (existingEntries[i] === weatherData.name) {
-          isNew = false;
+
+      if (localStorage.getItem("cities") !== null) {
+        for (var i = 0; i < existingEntries.length; i++) {
+          if (existingEntries[i] === weatherData.name) {
+            isNew = false;
+          }
         }
-      }
-      if (isNew) {
+        for (var i = 0; i < mostPopularCities.length; i++) {
+          if (mostPopularCities[i] === weatherData.name) {
+            isNew = false;
+          }
+        }
+        if (isNew) {
+          existingEntries.push(weatherData.name);
+          localStorage.setItem("cities", JSON.stringify(existingEntries));
+          createNewCityButton(weatherData.name, usersCityListGroupEl);
+        }
+      } else {
+        existingEntries = [];
         existingEntries.push(weatherData.name);
         localStorage.setItem("cities", JSON.stringify(existingEntries));
-        createNewCityButton(weatherData.name);
+        createNewCityButton(weatherData.name, usersCityListGroupEl);
       }
     })
     .catch(function (error) {
@@ -280,18 +305,19 @@ function displayCurrentWeather(resultObj) {
 }
 
 // function to create new list item in the sidebar with the city's name
-function createNewCityButton(cityName) {
-  var allCityBtns = document.querySelectorAll(".list-group-item");
-  for (var i = 0; i < allCityBtns.length; i++) {
-    allCityBtns[i].classList.remove("active");
-  }
+function createNewCityButton(cityName, location) {
   var cityBtnEl = document.createElement("button");
   cityBtnEl.setAttribute("type", "button");
   cityBtnEl.classList.add("list-group-item", "list-group-item-action");
   cityBtnEl.textContent = cityName;
   cityBtnEl.setAttribute("value", cityName);
-  cityListGroupEl.prepend(cityBtnEl);
+  location.prepend(cityBtnEl);
   cityBtnEl.addEventListener("click", function () {
+    // remove active class from other buttons
+    var allCityBtns = document.querySelectorAll(".list-group-item");
+    for (var i = 0; i < allCityBtns.length; i++) {
+      allCityBtns[i].classList.remove("active");
+    }
     getCurrentWeather(cityBtnEl.value, apiKey);
     getForecast(cityBtnEl.value, apiKey);
     cityBtnEl.classList.add("active");
