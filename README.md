@@ -10,22 +10,20 @@ There are a variety of weather APIs freely available to use, however, I have use
 
 ### How the weather dashboard works
 
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
+This is a weather dashboard with form inputs.
+
+1. When a user wants to search for a city they will be presented with current and future conditions for that city and that city is added to their search history.
+2. When a user views the current weather conditions for that city, they will be presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index.
+3. When a user views the UV index, they are presented with a color that indicates whether the conditions are favorable, moderate, or severe
+4. When a user views future weather conditions for that city, they are presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity.
+5. When a user clicks on a city in their search history, they are again presented with the current and future weather conditions for that city.
 
 ### Mock-Up
 
 The following animation shows the web application's appearance and functionality:
-[!screenshot of application](./screenshot_of_application.png)
+![screenshot of application](./screenshot_of_application.png)
+
+![demonstration of application](./demo_of_weather_dashboard.gif)
 
 ## Table of Contents
 
