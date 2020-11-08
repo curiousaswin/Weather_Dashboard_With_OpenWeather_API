@@ -41,7 +41,7 @@ To install this project locally clone this [**project repository**](https://gith
 
 ## Usage
 
-The weather dashboard can be viewed at: this [**link**](https://kaylamuraoka.github.io/Weather_Dashboard_With_OpenWeather_API/).
+The weather dashboard can be viewed at this [**link**](https://kaylamuraoka.github.io/Weather_Dashboard_With_OpenWeather_API/).
 
 ## Credits
 
