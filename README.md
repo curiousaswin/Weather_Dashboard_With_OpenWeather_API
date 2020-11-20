@@ -21,9 +21,9 @@ This is a weather dashboard with form inputs.
 ### Mock-Up
 
 The following animation shows the web application's appearance and functionality:
-![screenshot of application](./screenshot_of_application.png)
+![screenshot of application](./assets/images/screenshot_of_application.png)
 
-![demonstration of application](./demo_of_weather_dashboard.gif)
+![demonstration of application](./assets/images/demo_of_weather_dashboard.gif)
 
 ## Table of Contents
 
