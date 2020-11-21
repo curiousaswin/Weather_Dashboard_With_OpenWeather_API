@@ -48,4 +48,4 @@ I used the [**OpenWeather API**](https://openweathermap.org/api) to retrieve wea
 
 ## License
 
-This project is licensed under [**GNU GPL v3**](https://choosealicense.com/licenses/gpl-3.0/).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
