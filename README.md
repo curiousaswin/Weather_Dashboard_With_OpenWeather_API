@@ -23,6 +23,7 @@ This weather dashboard uses form inputs.
 The following animation shows the web application's appearance and functionality:
 ![screenshot of application](./assets/images/screenshot_of_application.png)
 
+The following animation demonstrates the applications functionality:
 ![demonstration of application](./assets/images/WeatherDashboardDemo.gif)
 
 ## Table of Contents
