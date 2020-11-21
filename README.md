@@ -20,11 +20,14 @@ This weather dashboard uses form inputs.
 
 ### Mock-Up
 
-The following animation shows the web application's appearance and functionality:
-![screenshot of application](./assets/images/screenshot_of_application.png)
-
 The following animation demonstrates the applications functionality:
 ![demonstration of application](./assets/images/WeatherDashboardDemo.gif)
+
+This weather dashboard is responsive, meaning that the layout and content responds and adapts based on the size of screen in which it is presented on. See image below:
+The following animation shows the web application's appearance and functionality:
+![responsive views](./assets/images/ResponsiveViews.png)
+
+![screenshot of application](./assets/images/WeatherDashboardScreenshot.png)
 
 ## Table of Contents
 
