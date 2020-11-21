@@ -23,7 +23,7 @@ This is a weather dashboard with form inputs.
 The following animation shows the web application's appearance and functionality:
 ![screenshot of application](./assets/images/screenshot_of_application.png)
 
-![demonstration of application](./assets/images/demo_of_weather_dashboard.gif)
+![demonstration of application](./assets/images/WeatherDashboardDemo.gif)
 
 ## Table of Contents
 
