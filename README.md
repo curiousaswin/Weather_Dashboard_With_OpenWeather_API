@@ -10,7 +10,7 @@ There are a variety of weather APIs freely available to use, however, I used the
 
 ### How the weather dashboard works
 
-This is a weather dashboard with form inputs.
+This weather dashboard uses form inputs.
 
 1. When a user wants to search for a city they will be presented with current and future conditions for that city and that city is added to their search history.
 2. When a user views the current weather conditions for that city, they will be presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index.
